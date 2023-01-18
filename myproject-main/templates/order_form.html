@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+
+<div class="row d-flex justify-content-center text-center">
+	<div class="col-md-4 my-auto">
+		<div class="card card-body">
+
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{ form.management_form }}
+				<h1>Customer: {{customer.name}}</h1>
+				<br>
+				{% for i in form %}
+
+				{{i}}
+				<hr>
+				{% endfor %}
+				<input class="btn btn-outline-success" type="submit" name="confirm">
+				
+			</form>
+		</div>
+	</div>
+</div>			
+
+
+
+
+{% endblock %}
